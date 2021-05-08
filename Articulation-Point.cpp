@@ -5,7 +5,7 @@ int a[20][20],alt[20][20],n,reach[20],ap[100];
 
 int main()
 {
-     int i,j,k,l;
+    int i,j,k,l;
     cout<<"\n Enter no of vertex : ";
     cin>>n;
 
@@ -18,7 +18,7 @@ int main()
         }
        }
 
-    cout<<"\nEnter adjacency matrix : \n";
+    cout<<"\n Enter adjacency matrix : \n";
     for(i=1;i<=n;i++)
       {
       for(j=1;j<=n;j++)
@@ -26,7 +26,7 @@ int main()
            cin>>a[i][j];
        }
       }
-                        //give value to alternative array
+//give value to alternative array
        for(i=1;i<=n;i++)
        {
       for(j=1;j<=n;j++)
@@ -35,9 +35,6 @@ int main()
             alt[j][i]= a[j][i];
         }
        }
-                            
-
-
 //graph
        for(i=1;i<=n;i++)
       {
@@ -46,7 +43,7 @@ int main()
             a[i][j]=0;
             a[j][i]=0;
         }
-                      //remove that row $ column
+//remove that row $ column
       for(int q=i;q<=n;q++)
       {
           for(int x=1;x<=n;x++)
@@ -62,7 +59,7 @@ int main()
             a[q][y]=a[q+1][y];
         }
       }
-                   //check connection
+//check connection
      for(l=1;l<=n;l++)
      {
          reach[l]=0;
@@ -80,13 +77,13 @@ int nn=n-1,c=0;
 
  if(c==nn)
        {
-           ap[i]=0;                                           // connected
+           ap[i]=0;   // connected
        }
   else
        {
-           ap[i]=i;                                           // disconnected 
-}
-                            //re-arrange the value of array
+           ap[i]=i;  // disconnected 
+       }
+//re-arrange the value of array
     for(k=1;k<=n;k++)
      {
        for(j=1;j<=n;j++)
@@ -96,7 +93,7 @@ int nn=n-1,c=0;
         }
      }
  }
-                             //result    
+//result    
 cout<<"\n articulation point : \n";
       for(int s=1;s<=n;s++)
       {
@@ -107,8 +104,6 @@ cout<<"\n articulation point : \n";
       }
     return 0;
 }
-
-
 
 void dfs(int v)
 {
